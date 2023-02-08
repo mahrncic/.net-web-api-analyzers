@@ -25,4 +25,24 @@ public class ExampleController : ControllerBase
 
         return Ok(examples);
     }
+
+    [HttpGet("{name}")]
+    public IActionResult GetByName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            return BadRequest();
+        }
+
+        var example = _exampleService
+            .GetExamples()
+            .FirstOrDefault(x => x.Name == name);
+
+        if (example is null)
+        {
+            return NotFound();
+        }
+
+        return Ok(example);
+    }
 }
