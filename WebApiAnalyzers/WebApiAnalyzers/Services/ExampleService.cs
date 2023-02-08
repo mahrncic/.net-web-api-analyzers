@@ -10,14 +10,17 @@ public class ExampleService
         {
             new ExampleModel
             {
+                Id= 1,
                 Name = "Example 1",
             },
             new ExampleModel
             {
+                Id= 2,
                 Name = "Example 2",
             },
             new ExampleModel
             {
+                Id= 3,
                 Name = "Example 3",
             },
         };
