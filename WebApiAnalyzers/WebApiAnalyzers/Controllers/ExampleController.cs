@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApiAnalyzers.Conventions;
 using WebApiAnalyzers.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace WebApiAnalyzers.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-[ApiConventionType(typeof(CustomConventions))]
+//[ApiConventionType(typeof(CustomConventions))]
 public class ExampleController : ControllerBase
 {
     private readonly ExampleService _exampleService;

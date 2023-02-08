@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApiAnalyzers.Conventions;
+using WebApiAnalyzers.Middlewares;
 using WebApiAnalyzers.Services;
 
 //[assembly: ApiConventionType(typeof(CustomConventions))]
@@ -23,6 +24,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.MapControllers();
 
