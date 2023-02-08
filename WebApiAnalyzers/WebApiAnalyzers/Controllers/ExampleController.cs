@@ -33,6 +33,8 @@ public class ExampleController : ControllerBase
     //[ApiConventionMethod(typeof(CustomConventions), nameof(CustomConventions.GetById))]
     public IActionResult GetById(int id)
     {
+        //throw new Exception("Intentional exception");
+
         if (id <= 0)
         {
             return BadRequest();
